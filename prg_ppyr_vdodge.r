@@ -10,14 +10,12 @@
 ##THERE IS NO WARRANTY FOR THIS CODE
 ##############################################################################################################################
 
-
 library(tidyverse)
 library(data.table)
 library(ggthemes)
 library(forcats)
 
 bd <- fread('Casos1_2103B.csv', encoding = 'UTF-8')
-
 
 bdb <- bd %>% 
   count(Sexo, Edad, `Tipo*`) %>% 
@@ -26,8 +24,6 @@ bdb <- bd %>%
   ungroup() %>%
   complete(Sexo, Edad, `Tipo*`,
            fill = list(n = 0))
-
-
 
 p1 <- 
   ggplot() + 
@@ -62,5 +58,3 @@ p1 <-
        caption = 'cacristanchof@gmail.com') 
 
 p1
-
-
