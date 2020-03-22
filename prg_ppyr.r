@@ -1,7 +1,7 @@
 ##############################################################################################################################
 ##POPULATION PYRAMID WITH A DECOMPOSITION FOR THREE VARIABLES
 ##
-##CÉSAR CRISTANCHO, MARZO DE 2020 (LAST UPDATED MARZO DE 2020)
+##CÉSAR CRISTANCHO. MARCH, 2020 (LAST UPDATED: MARCH, 2020)
 ##
 ##cacristanchof@gmail.com
 ##
@@ -31,13 +31,13 @@ bdb <- bd %>%
 
 p1 <- 
   ggplot() + 
-  geom_bar(data = filter(bdb, Sexo=='Hombres'), aes(Edad, n), 
+  geom_bar(data = filter(bdb, Sexo=='Hombres'), aes(Edad, n* -1), 
            stat = "identity", fill = "dodgerblue1") +
-  geom_bar(data = filter(bdb, Sexo=='Hombres'), aes(Edad, n, fill = `Tipo*`), 
+  geom_bar(data = filter(bdb, Sexo=='Hombres'), aes(Edad, n* -1, fill = `Tipo*`), 
            stat = "identity", position = "dodge", colour='black') + 
-  geom_bar(data = filter(bdb, Sexo=='Mujeres'), aes(Edad, n * -1),
+  geom_bar(data = filter(bdb, Sexo=='Mujeres'), aes(Edad, n ),
            stat = "identity", fill = "dodgerblue1") +
-  geom_bar(data = filter(bdb, Sexo=='Mujeres'), aes(Edad, n * -1, fill = `Tipo*`),
+  geom_bar(data = filter(bdb, Sexo=='Mujeres'), aes(Edad, n , fill = `Tipo*`),
            stat = "identity", position = "dodge", colour='black') +
   scale_fill_brewer(palette = "PuBu", drop = FALSE)   +
   scale_x_discrete(drop = FALSE) +
